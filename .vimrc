@@ -58,13 +58,14 @@ set hlsearch
 set formatoptions-=cro
 set backspace=2
 set mouse=a
+set ignorecase
 set foldmethod=syntax
 set nofoldenable
 highlight Folded ctermfg=None
 
 "YCM settings
+let g:ycm_register_as_syntastic_checker=0
 set completeopt-=preview "disable preview window
-let g:ycm_extra_conf_globlist=['~/cs452/cs452/kernel/.ycm_extra_conf.py']
 "let g:ycm_show_diagnostics_ui=0
 let g:ycm_warning_symbol='●'
 let g:ycm_error_symbol='✖'
@@ -80,6 +81,9 @@ map <S-j> 5j
 map <S-k> 5k
 nnoremap tt :tabnext<CR>
 nnoremap tr :tabprev<CR>
+" Move tabs left/right
+nnoremap <silent> <s-left> :-tabmove<cr>
+nnoremap <silent> <s-right> :+tabmove<cr>
 
 "Airline settings
 let g:airline_exclude_preview=1
@@ -100,3 +104,11 @@ let g:ctrlp_cmd = 'CtrlP'
 "nerdterr settings
 "autocmd StdinReadPre * let s:std_in=1
 "autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+
+"nerdcommenter settings
+let g:NERDCompactSexyComs = 1
+
+"gitgutter
+let g:gitgutter_realtime = 0
+let g:gitgutter_eager = 0
+
